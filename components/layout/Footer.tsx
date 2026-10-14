@@ -26,7 +26,7 @@ export default function Footer() {
     <footer className="bg-[#071526] text-slate-300">
       {/* Newsletter */}
       <div className="bg-[#0b1e36] border-b border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-9 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="w-full px-4 sm:px-6 lg:px-8 py-9 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-bold font-display text-white">Subscribe to NTCPWC Research Bulletins</h3>
             <p className="text-slate-300 text-sm mt-1">Receive technical guidelines, conference announcements, and maritime research reports.</p>
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 py-14">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">

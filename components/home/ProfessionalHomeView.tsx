@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ScrollMotionShowcase from './ScrollMotionShowcase';
+import HeroMotionSection from './HeroMotionSection';
 import Link from 'next/link';
 import { 
   Building2, 
@@ -176,191 +178,12 @@ export default function ProfessionalHomeView() {
   return (
     <div className="bg-white text-[#45382b] font-sans selection:bg-[#8c6d46] selection:text-white">
       
-      {/* 1. HERO SECTION · WARM WHITE & SANDSTONE EDITORIAL */}
-      <section className="relative pt-32 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-[#faf6f0] via-[#f7f1e7]/40 to-white border-b border-[#e8ded0] overflow-hidden">
-        {/* Subtle warm sandstone architectural grid */}
-        <div 
-          className="absolute inset-0 opacity-[0.035] pointer-events-none"
-          style={{
-            backgroundImage: 'linear-gradient(#8c6d46 1px, transparent 1px), linear-gradient(90deg, #8c6d46 1px, transparent 1px)',
-            backgroundSize: '48px 48px'
-          }}
-        />
-
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            
-            {/* Left Content (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
-              
-              {/* Institutional Badge in Warm Sand & Camel */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#f4ece0] border border-[#dfd2be] text-[#7a5933] text-xs font-semibold tracking-wide">
-                <span className="w-2 h-2 rounded-full bg-[#a37a4c] animate-pulse" />
-                <span>MINISTRY OF PORTS, SHIPPING & WATERWAYS · SAGARMALA</span>
-              </div>
-
-              {/* Main Headline in Deep Warm Espresso & Bronze */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#291e13] tracking-tight leading-[1.12]">
-                Advancing India’s <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#755530] via-[#8c6d46] to-[#a37a4c]">
-                  Maritime & Coastal
-                </span> Engineering
-              </h1>
-
-              {/* Tagline */}
-              <p className="text-lg sm:text-xl text-[#5e5042] font-normal leading-relaxed max-w-2xl">
-                National Technology Centre for Ports, Waterways and Coasts (NTCPWC) at 
-                <strong className="text-[#382a1c]"> IIT Madras Discovery Campus</strong> — providing indigenous ocean engineering solutions, 
-                world-class hydraulic testbeds, and numerical modeling for national infrastructure.
-              </p>
-
-              {/* Action Buttons in Light Brown & Warm White */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/facilities"
-                  className="px-6 py-3.5 rounded-xl bg-[#8c6d46] hover:bg-[#785b34] text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2.5"
-                >
-                  <span>Explore Research Facilities</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  href="/services"
-                  className="px-6 py-3.5 rounded-xl bg-white hover:bg-[#faf7f2] text-[#6e4e2a] font-semibold text-sm border border-[#d8cbbb] shadow-sm transition-all flex items-center gap-2"
-                >
-                  <span>Consultancy & Testing Services</span>
-                </Link>
-
-                <Link
-                  href="/about"
-                  className="px-4 py-3.5 text-[#6b5847] hover:text-[#291e13] font-medium text-sm transition-colors flex items-center gap-1.5"
-                >
-                  <span>About NTCPWC</span>
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              {/* Accreditation and Mandate Mini-Line */}
-              <div className="pt-4 border-t border-[#e8ded0] flex flex-wrap items-center gap-6 text-xs text-[#736353]">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#8c6d46]" />
-                  <span>NABL Accredited Testing Standards</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#8c6d46]" />
-                  <span>Technical Advisor to 12 Major Ports</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#8c6d46]" />
-                  <span>Discovery Campus, Thaiyur, Chennai</span>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Right Hero Visual Showcase (5 cols) */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-2xl overflow-hidden bg-white border border-[#e2d5c3] shadow-xl group">
-                
-                {/* Image Window */}
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#241a12]">
-                  <Image
-                    src="/images/ntcpwc/campus_hq.jpg"
-                    alt="NTCPWC IIT Madras Discovery Campus"
-                    fill
-                    priority
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1f150d]/85 via-transparent to-transparent" />
-                  
-                  {/* Floating Badge in Warm Sand */}
-                  <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[#6e4e2a] text-xs font-bold shadow-md border border-[#e8ded0]">
-                    IIT MADRAS DISCOVERY CAMPUS
-                  </div>
-
-                  {/* Bottom Caption inside media */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <div className="text-xs font-mono uppercase tracking-wider text-[#deb887] mb-1">
-                      20-Acre Research Infrastructure
-                    </div>
-                    <div className="text-sm font-semibold leading-snug">
-                      National Technology Centre for Ports, Waterways and Coasts (NTCPWC)
-                    </div>
-                  </div>
-                </div>
-
-                {/* Quick Info bar below hero visual */}
-                <div className="p-4 bg-[#faf6f0] border-t border-[#e8ded0] flex items-center justify-between text-xs text-[#6e5d4e]">
-                  <span className="font-semibold text-[#543f2a]">Discovery Campus · Thaiyur, Chennai</span>
-                  <Link href="/about" className="font-semibold text-[#8c6d46] hover:text-[#6e4e2a] flex items-center gap-1">
-                    <span>Virtual Tour</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-          {/* 4 NATIONAL STATS CARDS */}
-          <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="p-6 rounded-2xl bg-white border border-[#e8ded0] shadow-sm hover:shadow-md hover:border-[#c29b68] transition-all">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#755530] font-mono">
-                150+
-              </div>
-              <div className="text-sm font-bold text-[#291e13] mt-1">
-                Major Port Studies
-              </div>
-              <div className="text-xs text-[#7a6b5c] mt-0.5">
-                Completed across Indian coastal waters
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-[#e8ded0] shadow-sm hover:shadow-md hover:border-[#c29b68] transition-all">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#755530] font-mono">
-                ₹1,450 Cr+
-              </div>
-              <div className="text-sm font-bold text-[#291e13] mt-1">
-                Infrastructure Assessed
-              </div>
-              <div className="text-xs text-[#7a6b5c] mt-0.5">
-                Port, berthing & waterway asset validation
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-[#e8ded0] shadow-sm hover:shadow-md hover:border-[#c29b68] transition-all">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#755530] font-mono">
-                12 Ports
-              </div>
-              <div className="text-sm font-bold text-[#291e13] mt-1">
-                Major Port Advisory
-              </div>
-              <div className="text-xs text-[#7a6b5c] mt-0.5">
-                Direct technology support to MoPSW
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-[#e8ded0] shadow-sm hover:shadow-md hover:border-[#c29b68] transition-all">
-              <div className="text-3xl sm:text-4xl font-extrabold text-[#755530] font-mono">
-                40+
-              </div>
-              <div className="text-sm font-bold text-[#291e13] mt-1">
-                Patents & Design Codes
-              </div>
-              <div className="text-xs text-[#7a6b5c] mt-0.5">
-                Indigenous technologies & standards
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      {/* 1. HERO MOTION GRAPHICS SECTION: KINETIC TEXT + REALISTIC SHIP BERTHING */}
+      <HeroMotionSection />
 
       {/* 2. AUTHENTIC "ABOUT US" SECTION FROM OLD WEBSITE */}
       <section className="py-20 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
@@ -433,9 +256,12 @@ export default function ProfessionalHomeView() {
         </div>
       </section>
 
+      {/* INTERACTIVE MOTION GRAPHIC SCROLL ENGINE: RESEARCH LAB -> WATER & SHIP */}
+      <ScrollMotionShowcase />
+
       {/* 3. AUTHENTIC "OUR FEATURES · WHY CHOOSE US" FROM OLD WEBSITE WITH CENTER VESSEL */}
       <section className="py-20 md:py-28 bg-[#faf6f0] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -571,7 +397,7 @@ export default function ProfessionalHomeView() {
 
       {/* 4. WORLD-CLASS TESTING & SIMULATION FACILITIES (INTERACTIVE TABS) */}
       <section className="py-20 md:py-28 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -694,7 +520,7 @@ export default function ProfessionalHomeView() {
 
       {/* 5. SOME OF OUR PARTNERS (AUTHENTIC PARTNERS SECTION FROM OLD WEBSITE) */}
       <section className="py-20 bg-white border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
             
@@ -781,7 +607,7 @@ export default function ProfessionalHomeView() {
 
       {/* 6. AUTHENTIC 2 CAMPUS LOCATIONS WITH INTERACTIVE MAPS FROM OLD WEBSITE */}
       <section className="py-20 bg-[#faf6f0] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-sm font-bold text-[#b45309] uppercase tracking-wider block mb-1">
@@ -910,7 +736,7 @@ export default function ProfessionalHomeView() {
 
       {/* 7. AUTHENTIC "FIND US AT THE OFFICE" + "CONTACT US" FORM (FROM SCREENSHOT 2) */}
       <section className="py-20 md:py-28 bg-[#fdfbf7] border-b border-[#e8ded0]">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
@@ -1095,7 +921,7 @@ export default function ProfessionalHomeView() {
 
       {/* 8. COMPLETE INSTITUTIONAL FOOTER (AUTHENTIC FROM SCREENSHOT 2) */}
       <footer className="bg-[#f4f7fa] text-[#4b5563] pt-16 border-t border-[#dce3ec] text-xs">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pb-12">
+        <div className="w-full px-4 sm:px-6 lg:px-8 pb-12">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-8">
             
@@ -1260,7 +1086,7 @@ export default function ProfessionalHomeView() {
 
         {/* Navy Bottom Bar (Exact from Screenshot 2) */}
         <div className="bg-[#1c2c54] py-3.5 px-6 lg:px-12 text-white border-t border-[#2d3e6d]">
-          <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium">
+          <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-medium">
             <div className="flex items-center gap-3 font-semibold">
               <Link href="/privacy" className="hover:text-[#93c5fd] transition-colors">Privacy Policy</Link>
               <span className="text-gray-400">|</span>

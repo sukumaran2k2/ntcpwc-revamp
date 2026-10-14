@@ -54,7 +54,7 @@ export default function AboutPreview() {
 
   return (
     <section className="py-20 lg:py-24 bg-white border-b border-slate-200/80 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div className="lg:col-span-7">

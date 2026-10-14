@@ -39,7 +39,7 @@ export default function MissionStrip() {
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#071628] via-[#0b1d3a] to-[#0d2242] opacity-95" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative w-full px-4 sm:px-6 lg:px-8">
         <AnimatedSection className="text-center mb-14">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="text-blue-300 text-xs font-semibold tracking-widest uppercase">Institutional Mission</span>

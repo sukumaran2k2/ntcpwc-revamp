@@ -26,7 +26,7 @@ export default function ServicesPage() {
       <main className="pt-28">
         <section className="relative py-16 bg-[#081a2f] text-white">
           <div className="absolute inset-0 bg-gradient-to-r from-[#071628] via-[#0b1d3a] to-[#0f2b48] opacity-95" />
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
+          <div className="relative w-full px-4 sm:px-6 lg:px-8 text-center">
             <AnimatedSection>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-200 text-xs font-semibold uppercase tracking-wider mb-4">
                 Specialized Technical Capabilities
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="py-20 bg-slate-50">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, i) => {
                 const Icon = iconMap[service.icon] || Anchor;
