@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════
+   APP.CSS — Global CSS Variables & Base Styles
+   ═══════════════════════════════════════════ */
+
+/* ── LIGHT THEME (default) ── */
+:root {
+  --primary:    #1a3762;
+  --accent:     #0067b8;
+  --white:      #ffffff;
+  --bg:         #ffffff;
+  --bg-alt:     #f8f9fb;
+  --text-main:  #171717;
+  --text-muted: #5f6368;
+  --border:     #eef0f3;
+  --nav-bg:     rgba(255, 255, 255, 0.92);
+  --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  --fs-base:    16px;
+}
+
+/* ── DARK THEME ── */
+[data-theme="dark"] {
+  --primary:    #58a6ff;
+  --accent:     #7dbfff;
+  --white:      #121212;
+  --bg:         #0d1117;
+  --bg-alt:     #161b22;
+  --text-main:  #e6edf3;
+  --text-muted: #8b949e;
+  --border:     #30363d;
+  --nav-bg:     rgba(13, 17, 23, 0.95);
+}
+
+/* ── GLOBAL BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: var(--fs-base);
+  scroll-behavior: smooth;
+  transition: font-size 0.2s ease;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* ── DARK THEME PAGE OVERRIDES ── */
+[data-theme="dark"] .about-page,
+[data-theme="dark"] .careers-page,
+[data-theme="dark"] .fac-page,
+[data-theme="dark"] .fac-detail,
+[data-theme="dark"] .gal-page,
+[data-theme="dark"] .home,
+[data-theme="dark"] .media-page,
+[data-theme="dark"] .pd-page,
+[data-theme="dark"] .ppl-page,
+[data-theme="dark"] .prod-page,
+[data-theme="dark"] .sd-page,
+[data-theme="dark"] .svc-page {
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+/* White sections become dark */
+[data-theme="dark"] .about-who,
+[data-theme="dark"] .about-story,
+[data-theme="dark"] .svc-grid-section,
+[data-theme="dark"] .fac-grid-section,
+[data-theme="dark"] .prod-grid-section,
+[data-theme="dark"] .ppl-body,
+[data-theme="dark"] .careers-jobs,
+[data-theme="dark"] .pd-overview,
+[data-theme="dark"] .sd-overview,
+[data-theme="dark"] .pd-gallery,
+[data-theme="dark"] .sd-gallery,
+[data-theme="dark"] .fac-detail__gallery,
+[data-theme="dark"] .fac-detail__overview {
+  background: var(--bg-alt) !important;
+  border-color: var(--border) !important;
+}
+
+/* Grey sections become slightly lighter dark */
+[data-theme="dark"] .about-mv,
+[data-theme="dark"] .pd-specs,
+[data-theme="dark"] .sd-specs,
+[data-theme="dark"] .fac-detail__specs,
+[data-theme="dark"] .pd-footer,
+[data-theme="dark"] .sd-footer,
+[data-theme="dark"] .fac-detail__footer,
+[data-theme="dark"] .careers-cta {
+  background: var(--bg) !important;
+  border-color: var(--border) !important;
+}
+
+/* Cards become dark */
+[data-theme="dark"] .svc-card,
+[data-theme="dark"] .fac-card,
+[data-theme="dark"] .prod-card,
+[data-theme="dark"] .why-card,
+[data-theme="dark"] .ppl-card,
+[data-theme="dark"] .job-row {
+  background: var(--bg-alt) !important;
+  border-color: var(--border) !important;
+}
+
+/* Text colors */
+[data-theme="dark"] .svc-card__name,
+[data-theme="dark"] .fac-card__name,
+[data-theme="dark"] .prod-card__name,
+[data-theme="dark"] .ppl-card__name,
+[data-theme="dark"] .ppl-row__name,
+[data-theme="dark"] .why-card__title,
+[data-theme="dark"] .a-heading,
+[data-theme="dark"] .about-who__h,
+[data-theme="dark"] .about-mv__heading,
+[data-theme="dark"] .pd-heading,
+[data-theme="dark"] .sd-heading,
+[data-theme="dark"] .job-row__title,
+[data-theme="dark"] .sd-list__title,
+[data-theme="dark"] .pd-spec-row__value,
+[data-theme="dark"] .sd-spec-value {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .svc-card__tagline,
+[data-theme="dark"] .fac-card__tagline,
+[data-theme="dark"] .prod-card__tagline,
+[data-theme="dark"] .why-card__body,
+[data-theme="dark"] .about-story__body,
+[data-theme="dark"] .pd-para,
+[data-theme="dark"] .sd-para,
+[data-theme="dark"] .ppl-card__role,
+[data-theme="dark"] .job-row__meta {
+  color: var(--text-muted) !important;
+}
+
+/* Border fixes */
+[data-theme="dark"] .job-row,
+[data-theme="dark"] .ppl-row,
+[data-theme="dark"] .pd-spec-row,
+[data-theme="dark"] .sd-spec-row,
+[data-theme="dark"] .svc-row__item {
+  border-color: var(--border) !important;
+}
+
+/* Search/input dark */
+[data-theme="dark"] .ppl-search,
+[data-theme="dark"] .ppl-select,
+[data-theme="dark"] .careers-search,
+[data-theme="dark"] .gal-search__input {
+  background: var(--bg-alt) !important;
+  border-color: var(--border) !important;
+  color: var(--text-main) !important;
+}
+
+/* Footer always dark — no change needed */
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+main { flex: 1; }

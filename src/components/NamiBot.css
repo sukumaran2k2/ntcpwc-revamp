@@ -1,0 +1,209 @@
+/* ═══════════════════════════════════════
+   MARINA AI — NTCPWC Chatbot
+   ═══════════════════════════════════════ */
+
+/* TRIGGER */
+.nami-trigger {
+  position: absolute;
+  bottom: 28px; right: 28px;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d1f3c 0%, #0067b8 100%);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(0,103,184,0.45);
+  transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s;
+}
+.nami-trigger:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0,103,184,0.55);
+}
+.nami-trigger--open {
+  background: #374151;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.nami-trigger__ring {
+  position: absolute; inset: -6px; border-radius: 50%;
+  border: 1.5px solid rgba(0,103,184,0.3);
+  animation: marina-ring 2.5s ease-out infinite;
+}
+@keyframes marina-ring {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.6); }
+}
+
+/* WINDOW */
+.nami-window {
+  position: absolute;
+  bottom: 96px; right: 28px;
+  width: 360px; height: 520px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
+  transform: translateY(16px) scale(0.95);
+  opacity: 0; pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.25s;
+  transform-origin: bottom right;
+}
+.nami-window--open {
+  transform: translateY(0) scale(1);
+  opacity: 1; pointer-events: all;
+}
+
+/* HEADER */
+.nami-header {
+  display: flex; align-items: center; gap: 11px;
+  padding: 14px 16px;
+  background: #0d1f3c;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.nami-header::before {
+  content: '';
+  position: absolute; top: -20px; right: -20px;
+  width: 100px; height: 100px; border-radius: 50%;
+  background: rgba(0,103,184,0.2);
+}
+.nami-header__avatar {
+  position: relative; width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; z-index: 1;
+}
+.nami-header__avatar svg { display: block; }
+.nami-header__status {
+  position: absolute; bottom: -2px; right: -2px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #22c55e; border: 2px solid #0d1f3c;
+}
+.nami-header__info { flex: 1; z-index: 1; }
+.nami-header__name {
+  font-size: 13.5px; font-weight: 900; color: #fff;
+  font-family: 'Nunito Sans', sans-serif; margin: 0; line-height: 1.2;
+}
+.nami-header__sub {
+  font-size: 10.5px; color: rgba(255,255,255,0.4);
+  font-family: 'Nunito Sans', sans-serif; margin: 0; font-weight: 600;
+}
+.nami-header__close {
+  margin-left: auto; z-index: 1;
+  background: rgba(255,255,255,0.08); border: none;
+  color: rgba(255,255,255,0.5); cursor: pointer;
+  width: 26px; height: 26px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+.nami-header__close:hover { background: rgba(255,255,255,0.16); color: #fff; }
+
+/* MESSAGES */
+.nami-messages {
+  flex: 1; overflow-y: auto; padding: 16px 14px;
+  display: flex; flex-direction: column; gap: 12px;
+  background: #f8f9fb;
+}
+.nami-messages::-webkit-scrollbar { width: 3px; }
+.nami-messages::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
+
+.nami-msg { display: flex; align-items: flex-end; gap: 8px; }
+.nami-msg--user { flex-direction: row-reverse; }
+
+.nami-msg__avatar {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: linear-gradient(135deg, #0d1f3c, #0067b8);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.nami-msg__bubble {
+  max-width: 82%; padding: 9px 13px; border-radius: 14px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 13.5px; line-height: 1.65; font-weight: 500;
+}
+.nami-msg--assistant .nami-msg__bubble {
+  background: #fff; color: #111;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+.nami-msg--user .nami-msg__bubble {
+  background: #0d1f3c; color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.nami-msg__link {
+  color: #0067b8; font-weight: 800; text-decoration: none;
+  background: rgba(0,103,184,0.08); padding: 1px 6px; border-radius: 5px;
+}
+.nami-msg__link:hover { background: rgba(0,103,184,0.15); }
+
+/* TYPING */
+.nami-typing { display: flex !important; align-items: center; gap: 4px; }
+.nami-typing span {
+  width: 6px; height: 6px; border-radius: 50%; background: #9ca3af;
+  animation: marina-dot 1.2s ease-in-out infinite;
+}
+.nami-typing span:nth-child(2) { animation-delay: 0.2s; }
+.nami-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes marina-dot {
+  0%,60%,100% { transform: translateY(0); opacity: 0.4; }
+  30%          { transform: translateY(-5px); opacity: 1; }
+}
+
+/* SUGGESTIONS */
+.nami-suggestions { display: flex; flex-direction: column; gap: 5px; padding-left: 34px; }
+.nami-suggestion {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+  padding: 7px 12px; font-family: 'Nunito Sans', sans-serif;
+  font-size: 12px; font-weight: 700; color: #374151;
+  text-align: left; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.nami-suggestion:hover { border-color: #0067b8; color: #0067b8; }
+
+/* INPUT */
+.nami-input-wrap {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 12px; background: #fff;
+  border-top: 1px solid #f3f4f6; flex-shrink: 0;
+}
+.nami-input {
+  flex: 1; border: 1.5px solid #e5e7eb; border-radius: 11px;
+  padding: 9px 13px; font-family: 'Nunito Sans', sans-serif;
+  font-size: 13px; font-weight: 500; color: #111; outline: none;
+  background: #f8f9fb; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.nami-input:focus { border-color: #0067b8; box-shadow: 0 0 0 3px rgba(0,103,184,0.1); background: #fff; }
+.nami-input::placeholder { color: #adb5bd; }
+.nami-input:disabled { opacity: 0.6; }
+
+.nami-send {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: #e5e7eb; border: none; cursor: pointer; color: #9ca3af;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s, transform 0.15s; flex-shrink: 0;
+}
+.nami-send--active { background: #0d1f3c; color: #fff; }
+.nami-send--active:hover { background: #1a3762; transform: scale(1.08); }
+.nami-send:disabled { cursor: not-allowed; }
+
+/* DARK */
+[data-theme="dark"] .nami-window { background: #161b22; border-color: #21262d; }
+[data-theme="dark"] .nami-messages { background: #0d1117; }
+[data-theme="dark"] .nami-msg--assistant .nami-msg__bubble { background: #161b22; color: #e6edf3; }
+[data-theme="dark"] .nami-suggestion { background: #161b22; border-color: #21262d; color: #8b949e; }
+[data-theme="dark"] .nami-suggestion:hover { border-color: #58a6ff; color: #58a6ff; }
+[data-theme="dark"] .nami-input-wrap { background: #161b22; border-color: #21262d; }
+[data-theme="dark"] .nami-input { background: #0d1117; border-color: #21262d; color: #e6edf3; background: #0d1117; }
+[data-theme="dark"] .nami-input:focus { border-color: #58a6ff; box-shadow: 0 0 0 3px rgba(88,166,255,0.1); }
+[data-theme="dark"] .nami-send { background: #21262d; color: #6e7681; }
+[data-theme="dark"] .nami-send--active { background: #1f6feb; color: #fff; }
+[data-theme="dark"] .nami-msg__link { color: #58a6ff; background: rgba(88,166,255,0.1); }
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .nami-window { right: 10px; left: 10px; width: auto; bottom: 90px; }
+  .nami-trigger { bottom: 20px; right: 14px; }
+}

@@ -1,0 +1,87 @@
+/* ═══════════════════════════════════
+   NOTFOUND.CSS
+   ═══════════════════════════════════ */
+.nf-page {
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(160deg, #0d1f3c 0%, #0a1628 60%, #061020 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: fixed; inset: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.nf-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+
+.nf-content {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 16px;
+  padding: 60px 24px;
+  max-width: 560px;
+}
+
+.nf-eyebrow {
+  font-size: 11px; font-weight: 800; letter-spacing: 3px;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+.nf-code {
+  font-size: clamp(100px, 18vw, 180px);
+  font-weight: 900; color: transparent;
+  letter-spacing: -8px; line-height: 1;
+  margin: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(93,160,203,0.4) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  text-shadow: none;
+}
+
+.nf-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900; color: #fff;
+  letter-spacing: -1.5px; line-height: 1.1; margin: 0;
+}
+
+.nf-sub {
+  font-size: 15px; color: rgba(255,255,255,0.45);
+  line-height: 1.75; font-weight: 400;
+  max-width: 400px; margin: 4px 0 8px;
+}
+
+.nf-btns {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  justify-content: center; margin-top: 8px;
+}
+
+.nf-btn {
+  display: inline-flex; align-items: center;
+  padding: 13px 28px; border-radius: 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px; font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s, filter 0.2s;
+}
+.nf-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+
+.nf-btn--primary {
+  background: #0067b8; color: #fff;
+  box-shadow: 0 8px 32px rgba(0,103,184,0.4);
+}
+
+.nf-btn--ghost {
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+}
+.nf-btn--ghost:hover { background: rgba(255,255,255,0.12); }
+
+@media (max-width: 480px) {
+  .nf-btns { flex-direction: column; width: 100%; }
+  .nf-btn { justify-content: center; }
+}

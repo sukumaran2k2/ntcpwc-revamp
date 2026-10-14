@@ -1,0 +1,292 @@
+/* ═══════════════════════════════════════════
+   APP.CSS — Global variables, base, dark theme
+   ═══════════════════════════════════════════ */
+
+/* ── LIGHT ── */
+:root {
+  --primary:    #1a3762;
+  --accent:     #0067b8;
+  --white:      #ffffff;
+  --bg:         #ffffff;
+  --bg-alt:     #f8f9fb;
+  --text-main:  #171717;
+  --text-muted: #5f6368;
+  --border:     #eef0f3;
+  --nav-bg:     rgba(255,255,255,0.92);
+  --card-bg:    #ffffff;
+  --fs-base:    16px;
+}
+
+/* ── DARK ── */
+[data-theme="dark"] {
+  --primary:    #7dbfff;
+  --accent:     #58a6ff;
+  --white:      #0d1117;
+  --bg:         #0d1117;
+  --bg-alt:     #161b22;
+  --text-main:  #e6edf3;
+  --text-muted: #8b949e;
+  --border:     #21262d;
+  --nav-bg:     rgba(13,17,23,0.97);
+  --card-bg:    #161b22;
+}
+
+/* ── BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: var(--fs-base); scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#root { display: flex; flex-direction: column; min-height: 100svh; }
+main  { flex: 1; }
+
+/* ════════════════════════════════════════════
+   DARK MODE — comprehensive overrides
+   Every white/grey surface → dark equivalent
+   ════════════════════════════════════════════ */
+
+/* ── Whole page wrappers ── */
+[data-theme="dark"] .home,
+[data-theme="dark"] .about-page,
+[data-theme="dark"] .svc-page,
+[data-theme="dark"] .fac-page,
+[data-theme="dark"] .prod-page,
+[data-theme="dark"] .ppl-page,
+[data-theme="dark"] .careers-page,
+[data-theme="dark"] .gal-page,
+[data-theme="dark"] .media-page,
+[data-theme="dark"] .pd-page,
+[data-theme="dark"] .sd-page,
+[data-theme="dark"] .fac-detail
+{ background: var(--bg) !important; color: var(--text-main) !important; }
+
+/* ── White sections ── */
+[data-theme="dark"] .about,
+[data-theme="dark"] .about-who,
+[data-theme="dark"] .about-story,
+[data-theme="dark"] .pd-overview,
+[data-theme="dark"] .sd-overview,
+[data-theme="dark"] .pd-gallery,
+[data-theme="dark"] .sd-gallery,
+[data-theme="dark"] .fac-detail__overview,
+[data-theme="dark"] .fac-detail__gallery,
+[data-theme="dark"] .locations,
+[data-theme="dark"] .clients
+{ background: var(--bg) !important; border-color: var(--border) !important; }
+
+/* ── Grey / alt sections ── */
+[data-theme="dark"] .features,
+[data-theme="dark"] .faq,
+[data-theme="dark"] .svc-grid-section,
+[data-theme="dark"] .fac-grid-section,
+[data-theme="dark"] .prod-grid-section,
+[data-theme="dark"] .ppl-body,
+[data-theme="dark"] .careers-jobs,
+[data-theme="dark"] .pd-specs,
+[data-theme="dark"] .sd-specs,
+[data-theme="dark"] .fac-detail__specs,
+[data-theme="dark"] .pd-footer,
+[data-theme="dark"] .sd-footer,
+[data-theme="dark"] .fac-detail__footer,
+[data-theme="dark"] .home-cta,
+[data-theme="dark"] .facilities
+{ background: var(--bg-alt) !important; border-color: var(--border) !important; }
+
+/* ── Cards ── */
+[data-theme="dark"] .svc-card,
+[data-theme="dark"] .fac-card,
+[data-theme="dark"] .prod-card,
+[data-theme="dark"] .feat-card,
+[data-theme="dark"] .ppl-card,
+[data-theme="dark"] .job-row,
+[data-theme="dark"] .loc-card,
+[data-theme="dark"] .faq__item,
+[data-theme="dark"] .gal-event-card,
+[data-theme="dark"] .media-card
+{ background: var(--card-bg) !important; border-color: var(--border) !important; }
+
+/* ── Section headings / eyebrows ── */
+[data-theme="dark"] .sec-heading,
+[data-theme="dark"] .sec-eyebrow,
+[data-theme="dark"] .svc-card__name,
+[data-theme="dark"] .fac-card__name,
+[data-theme="dark"] .prod-card__name,
+[data-theme="dark"] .feat-card__title,
+[data-theme="dark"] .ppl-card__name,
+[data-theme="dark"] .ppl-row__name,
+[data-theme="dark"] .job-row__title,
+[data-theme="dark"] .faq__q,
+[data-theme="dark"] .loc-card__name,
+[data-theme="dark"] .about__text h2,
+[data-theme="dark"] .pd-heading,
+[data-theme="dark"] .sd-heading,
+[data-theme="dark"] .about-who__h,
+[data-theme="dark"] .about-story h2,
+[data-theme="dark"] .pd-spec-row__value,
+[data-theme="dark"] .sd-spec-value,
+[data-theme="dark"] .home-cta__h,
+[data-theme="dark"] .loc-card__addr,
+[data-theme="dark"] .loc-card__contact,
+[data-theme="dark"] .faq__icon
+{ color: var(--text-main) !important; }
+
+/* ── Muted text ── */
+[data-theme="dark"] .svc-card__tagline,
+[data-theme="dark"] .fac-card__tagline,
+[data-theme="dark"] .prod-card__tagline,
+[data-theme="dark"] .feat-card__body,
+[data-theme="dark"] .about__para,
+[data-theme="dark"] .pd-para,
+[data-theme="dark"] .sd-para,
+[data-theme="dark"] .ppl-card__role,
+[data-theme="dark"] .ppl-row__role,
+[data-theme="dark"] .job-row__meta,
+[data-theme="dark"] .faq__a,
+[data-theme="dark"] .about-story__body,
+[data-theme="dark"] .features__sub,
+[data-theme="dark"] .home-cta__sub,
+[data-theme="dark"] .loc-card__addr,
+[data-theme="dark"] .clients__label,
+[data-theme="dark"] .clients__placeholder-name
+{ color: var(--text-muted) !important; }
+
+/* ── Borders / dividers ── */
+[data-theme="dark"] .faq__item,
+[data-theme="dark"] .ppl-row,
+[data-theme="dark"] .ppl-list,
+[data-theme="dark"] .pd-spec-row,
+[data-theme="dark"] .sd-spec-row,
+[data-theme="dark"] .feat-card,
+[data-theme="dark"] .features__grid,
+[data-theme="dark"] .clients__item,
+[data-theme="dark"] .clients__label-line,
+[data-theme="dark"] .clients__fade-l,
+[data-theme="dark"] .jobs-list,
+[data-theme="dark"] .about
+{ border-color: var(--border) !important; }
+
+/* ── Clients fade overlays in dark ── */
+[data-theme="dark"] .clients__fade-l
+{ background: linear-gradient(to right, #0d1117, transparent) !important; }
+[data-theme="dark"] .clients__fade-r
+{ background: linear-gradient(to left, #0d1117, transparent) !important; }
+
+/* ── Clients placeholder text ── */
+[data-theme="dark"] .clients__placeholder-abbr
+{ color: var(--accent) !important; }
+
+/* ── Icon boxes ── */
+[data-theme="dark"] .feat-card__icon
+{ background: rgba(88,166,255,0.1) !important; color: var(--accent) !important; }
+
+/* ── Search / input ── */
+[data-theme="dark"] .ppl-search,
+[data-theme="dark"] .ppl-select,
+[data-theme="dark"] .careers-search,
+[data-theme="dark"] .gal-search__input
+{ background: var(--card-bg) !important; border-color: var(--border) !important; color: var(--text-main) !important; }
+
+[data-theme="dark"] .ppl-search__input
+{ color: var(--text-main) !important; }
+
+/* ── Tags / pills ── */
+[data-theme="dark"] .ppl-row__role
+{ background: rgba(88,166,255,0.12) !important; color: var(--accent) !important; }
+
+/* ── Sec link ── */
+[data-theme="dark"] .sec-link
+{ color: var(--accent) !important; }
+
+/* ── About image tag / badge ── */
+[data-theme="dark"] .about__img-wrap
+{ border-color: var(--border) !important; }
+
+/* ── FAQ answer ── */
+[data-theme="dark"] .faq__a-wrap
+{ border-color: var(--border) !important; }
+
+/* ── Location card contact link ── */
+[data-theme="dark"] .loc-card__contact,
+[data-theme="dark"] .loc-card__directions
+{ color: var(--accent) !important; }
+
+/* ── Location tag ── */
+[data-theme="dark"] .loc-card__tag--blue
+{ background: rgba(88,166,255,0.15) !important; color: var(--accent) !important; }
+[data-theme="dark"] .loc-card__tag--green
+{ background: rgba(63,185,80,0.15) !important; color: #3fb950 !important; }
+
+/* ── Facility/service/product detail pages ── */
+[data-theme="dark"] .pd-eyebrow,
+[data-theme="dark"] .sd-eyebrow
+{ color: var(--accent) !important; }
+[data-theme="dark"] .pd-eyebrow::before,
+[data-theme="dark"] .sd-eyebrow::before
+{ background: var(--accent) !important; }
+[data-theme="dark"] .pd-spec-row,
+[data-theme="dark"] .sd-spec-row
+{ border-color: var(--border) !important; }
+[data-theme="dark"] .pd-spec-row__label,
+[data-theme="dark"] .sd-spec-label
+{ color: var(--text-muted) !important; }
+
+/* ── Gallery photo hover ── */
+[data-theme="dark"] .pd-photo,
+[data-theme="dark"] .sd-photo,
+[data-theme="dark"] .gal-photo
+{ border-color: var(--border) !important; }
+
+/* ── Back button ── */
+[data-theme="dark"] .pd-back-btn,
+[data-theme="dark"] .sd-back-btn
+{ color: var(--text-main) !important; }
+
+/* ── CTA section ── */
+[data-theme="dark"] .home-cta__btn--white
+{ background: var(--text-main) !important; color: var(--bg) !important; }
+[data-theme="dark"] .home-cta__btn--ghost
+{ border-color: rgba(255,255,255,0.2) !important; color: var(--text-main) !important; }
+
+/* ── Img break overlay always stays ── */
+[data-theme="dark"] .img-break__quote,
+[data-theme="dark"] .img-break__cite
+{ color: #fff !important; }
+
+/* ── Media page ── */
+[data-theme="dark"] .media-card__title,
+[data-theme="dark"] .media-card__source
+{ color: var(--text-main) !important; }
+[data-theme="dark"] .media-card__excerpt
+{ color: var(--text-muted) !important; }
+
+/* ── Gallery ── */
+[data-theme="dark"] .gal-filter-btn
+{ background: var(--card-bg) !important; border-color: var(--border) !important; color: var(--text-muted) !important; }
+[data-theme="dark"] .gal-filter-btn.active
+{ background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
+
+/* ── Careers ── */
+[data-theme="dark"] .careers-cta
+{ background: var(--bg-alt) !important; }
+
+/* ── People ── */
+[data-theme="dark"] .ppl-filters
+{ border-color: var(--border) !important; }
+[data-theme="dark"] .ppl-count
+{ color: var(--text-muted) !important; }
+
+/* ── Services detail items list ── */
+[data-theme="dark"] .sd-list__title
+{ color: #fff !important; }
+[data-theme="dark"] .sd-list__desc
+{ color: rgba(255,255,255,0.55) !important; }
+
+/* ── Smooth transition on all elements ── */
+[data-theme="dark"] *
+{ transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; }

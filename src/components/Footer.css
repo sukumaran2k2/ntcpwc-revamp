@@ -1,0 +1,381 @@
+/* ═══════════════════════════════════════════════════════
+   FOOTER.CSS  —  NTCPWC  (Google / Microsoft precision)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── RESET INSIDE FOOTER ── */
+.ftx *, .ftx *::before, .ftx *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ftx ul { list-style: none; }
+.ftx a  { text-decoration: none; }
+
+/* ══════════════════════════════════
+   WRAPPER
+══════════════════════════════════ */
+.ftx {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #0f172a;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle diagonal grid texture */
+.ftx::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════
+   CTA BAND
+══════════════════════════════════ */
+.ftx-cta-band {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+
+.ftx-cta-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 72px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* accent glow behind headline */
+.ftx-cta-text {
+  position: relative;
+}
+
+.ftx-cta-text::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(93,90,200,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ftx-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #5da0cb;
+  margin-bottom: 18px;
+}
+
+.ftx-headline {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+}
+
+/* ── SUBSCRIBE ── */
+.ftx-subscribe {
+  flex-shrink: 0;
+  min-width: 380px;
+}
+
+.ftx-sub-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.ftx-form {
+  display: flex;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+  transition: border-color 0.3s;
+}
+
+.ftx-form:focus-within {
+  border-color: rgba(93,160,203,0.5);
+  background: rgba(255,255,255,0.07);
+}
+
+.ftx-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ftx-input::placeholder { color: rgba(255,255,255,0.25); }
+
+.ftx-sub-btn {
+  background: #4f52c7;
+  border: none;
+  padding: 14px 22px;
+  font-size: 13px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: background 0.25s;
+}
+
+.ftx-sub-btn:hover { background: #3b3eb5; }
+
+.ftx-confirmed {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6ee7b7;
+  padding: 14px 0;
+}
+
+/* ══════════════════════════════════
+   MAIN BODY
+══════════════════════════════════ */
+.ftx-main {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.ftx-main-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 64px 6%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+}
+
+/* ── BRAND COL ── */
+.ftx-logo-link { display: inline-block; }
+
+.ftx-logo {
+  height: 44px;
+  width: auto;
+  filter: none;
+  transition: opacity 0.25s;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.ftx-logo:hover { opacity: 1; }
+
+.ftx-brand-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.42);
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.ftx-socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.ftx-social {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.ftx-social:hover {
+  background: #4f52c7;
+  color: #fff;
+  border-color: #0067b8;
+  transform: translateY(-2px);
+}
+
+.ftx-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.3px;
+}
+
+/* ── NAV COLS ── */
+.ftx-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.ftx-nav-heading {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.ftx-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.ftx-nav-link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.2s, padding-left 0.2s;
+  display: block;
+}
+
+.ftx-nav-link:hover {
+  color: #fff;
+  padding-left: 4px;
+}
+
+/* ══════════════════════════════════
+   BOTTOM BAR
+══════════════════════════════════ */
+.ftx-bottom {
+  background: #1e2057;
+}
+
+.ftx-bottom-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 22px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ftx-copy {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+
+.ftx-legal {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ftx-legal-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ftx-pipe {
+  color: rgba(255,255,255,0.12);
+  font-size: 11px;
+}
+
+.ftx-legal-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.28);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.ftx-legal-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+}
+
+.ftx-govt {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.18);
+  letter-spacing: 0.2px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ftx-main-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .ftx-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .ftx-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .ftx-subscribe { min-width: 100%; }
+  .ftx-form { max-width: 480px; }
+}
+
+@media (max-width: 640px) {
+  .ftx-cta-inner  { padding: 48px 6%; }
+  .ftx-main-inner { padding: 48px 6%; }
+
+  .ftx-nav {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 16px;
+  }
+
+  .ftx-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ftx-govt { text-align: left; }
+
+  .ftx-legal { flex-wrap: wrap; }
+
+  .ftx-form { flex-direction: column; border-radius: 12px; }
+  .ftx-sub-btn { border-radius: 0 0 10px 10px; text-align: center; padding: 14px; }
+  .ftx-input { border-radius: 10px 10px 0 0; }
+}
